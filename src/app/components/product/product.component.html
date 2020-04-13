@@ -1,0 +1,22 @@
+<h3 class="bg-primary text-white text-center">Product List</h3>
+<table class="table table-hover">
+<tr>
+    <td>id</td>
+    <td>name</td>
+    <td>price</td>
+    <td>photo</td>
+    <td>buy</td>
+</tr>
+<tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>
+        <img src="assets/images/{{product.photo}}" alt="">
+    </td>
+    <td>
+        <button class="btn btn-info" [routerLink]="['/cart',{id:product.id}]">Buy now</button>
+    </td>
+
+</tr>
+</table>
